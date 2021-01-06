@@ -6,30 +6,30 @@ using namespace std;
 // 服务端类构造函数
 Server::Server(){
 // 初始化服务器地址和端口
-serverAddr.sin_family = PF_INET;
-serverAddr.sin_port = htons(SERVER_PORT);
-serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
-// 初始化socket
-listener = 0;
-// epool fd
-epfd = 0;
+	serverAddr.sin_family = PF_INET;
+	serverAddr.sin_port = htons(SERVER_PORT);
+	serverAddr.sin_addr.s_addr = inet_addr(SERVER_IP);
+	// 初始化socket
+	listener = 0;
+	// epool fd
+	epfd = 0;
 }
 // 初始化服务端并启动监听
 void Server::Init() {
-cout << "Init Server..." << endl;
-//创建监听socket
-listener = socket(PF_INET, SOCK_STREAM, 0);
-if(listener < 0) { perror("listener"); exit(-1);}
-//绑定地址
-if( bind(listener, (struct sockaddr *)&serverAddr, sizeof(serverAddr)) < 0) {
-perror("bind error");
-exit(-1);
+	cout << "Init Server..." << endl;
+	//创建监听socket
+	listener = socket(PF_INET, SOCK_STREAM, 0);
+	if(listener < 0) { perror("listener"); exit(-1);}
+	//绑定地址
+	if( bind(listener, (struct sockaddr *)&serverAddr, sizeof(serverAddr)) < 0) {
+	perror("bind error");
+	exit(-1);
 }
-//监听
-int ret = listen(listener, 5);
-if(ret < 0) {
-perror("listen error");
-exit(-1);
+	//监听
+	int ret = listen(listener, 5);
+	if(ret < 0) {
+	perror("listen error");
+	exit(-1);
 }
 cout << "Start to listen: " << SERVER_IP << endl;
 //在内核中创建事件表 epfd是一个句柄
