@@ -1,0 +1,8 @@
+#CMakefiles
+ChatHubServer/CMakeFiles/
+
+#logs
+ChatHubServer/logs/
+
+#CMakeCache
+ChatHubServer/CMakeCache.txt
