@@ -6,3 +6,6 @@ ChatHubServer/logs/
 
 #CMakeCache
 ChatHubServer/CMakeCache.txt
+
+#ChatHubClient
+ChatHubClient/ChatHub.pro.user
