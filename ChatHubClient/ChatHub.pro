@@ -16,14 +16,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    groupchat.cpp \
     main.cpp \
-    loginwindow.cpp
+    loginwindow.cpp \
+    mainwindow.cpp \
+    singlechat.cpp
 
 HEADERS += \
-    loginwindow.h
+    groupchat.h \
+    loginwindow.h \
+    mainwindow.h \
+    singlechat.h
 
 FORMS += \
-    loginwindow.ui
+    groupchat.ui \
+    loginwindow.ui \
+    mainwindow.ui \
+    singlechat.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
