@@ -1,0 +1,42 @@
+客户端发送：
+
+登录：
+1002 username password
+
+注册:
+1001 username nickname password
+
+修改密码：
+1008 oldpwd newpwd
+
+发送消息：
+1100 message receiver-id
+
+添加好友：
+1005 username 
+
+
+服务端发送：
+
+确认登录信息：
+1002 103    //wrong  密码错误
+1002 102    //nonex  用户或密码错误
+1002 0 id    //ok  登录成功
+
+推送好友与历史消息：
+1101 id1 messageNum1  nickname1 m1 m2 m3... id2 nickname2... messageNum2 m1 m2 m3...
+1101 sumfriends id1 nick1 status ...    summessage message1 id1 time1
+推送单条消息：
+1100 time+message sender-id
+
+确认添加好友：
+1005  102 //nonex  用户不存在
+1005  0 id nickname // 添加成功
+
+注册：
+1001 101// exist  用户重名
+1001 0 // 注册成功
+
+修改密码：
+1008  0 // 修改成功
+1008  105 // 旧密码错误
