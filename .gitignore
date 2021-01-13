@@ -9,3 +9,6 @@ ChatHubServer/CMakeCache.txt
 
 #ChatHubClient
 ChatHubClient/ChatHub.pro.user
+
+#QtServer
+QtServer/server.pro.user
